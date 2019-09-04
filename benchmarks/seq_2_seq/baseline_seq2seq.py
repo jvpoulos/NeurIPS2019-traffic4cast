@@ -58,9 +58,12 @@ from keras import losses
 from keras import backend as K 
 from tensorflow import device
 
-import tensorflow as tf
-for gpu in tf.config.experimental.list_physical_devices('GPU'):
-	tf.compat.v2.config.experimental.set_memory_growth(gpu, True)
+from tensorflow.compat.v1 import ConfigProto
+from tensorflow.compat.v1 import InteractiveSession
+
+config = ConfigProto()
+config.gpu_options.allow_growth = True
+session = InteractiveSession(config=config)
 
 #Data Loader Functions
 
