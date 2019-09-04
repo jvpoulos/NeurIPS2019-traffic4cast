@@ -257,7 +257,7 @@ if __name__ == '__main__':
         elif opt in ("-c","--city"):
             city = arg
     if city in ("Berlin","Istanbul","Moscow"):
-        training_file_dir = os.path.join(data_dir, city, city+"_test")
+        training_file_dir = os.path.join(data_dir, city, city+"_training")
         training_indices = utcPlus3
         if city == "Berlin":
             training_indices = utcPlus2

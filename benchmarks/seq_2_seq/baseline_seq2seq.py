@@ -250,7 +250,7 @@ if __name__ == '__main__':
         elif opt in ("-c","--city"):
             city = arg
     if city in ("Berlin","Istanbul","Moscow"):
-        training_file_dir = os.path.join(data_dir, city, city+"_test")
+        training_file_dir = os.path.join(data_dir, city, city+"_training")
         model_train(training_file_dir, model_dir, log_path)
     else:
         print('invalid city provided')
