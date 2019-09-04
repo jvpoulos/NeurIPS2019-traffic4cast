@@ -62,9 +62,8 @@ from keras import backend as K
 from tensorflow import device
 
 import tensorflow as tf
-s_config = tf.ConfigProto()
-s_config.gpu_options.allow_growth = True
-config = tf.estimator.RunConfig(model_dir=FLAGS.model_dir, session_config=s_config)
+for gpu in tf.config.experimental.list_physical_devices('GPU'):
+	tf.compat.v2.config.experimental.set_memory_growth(gpu, True)
 
 #set indices (correspond to prediction times in test sets)
 utcPlus2 = [30, 69, 126, 186, 234]
