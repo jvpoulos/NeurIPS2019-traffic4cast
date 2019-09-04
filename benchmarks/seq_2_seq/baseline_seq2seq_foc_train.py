@@ -61,6 +61,10 @@ from keras import losses
 from keras import backend as K
 from tensorflow import device
 
+s_config = tf.ConfigProto()
+s_config.gpu_options.allow_growth = True
+config = tf.estimator.RunConfig(model_dir=FLAGS.model_dir, session_config=s_config)
+
 #set indices (correspond to prediction times in test sets)
 utcPlus2 = [30, 69, 126, 186, 234]
 utcPlus3 = [57, 114, 174, 222, 258]

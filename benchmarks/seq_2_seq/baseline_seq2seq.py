@@ -58,6 +58,10 @@ from keras import losses
 from keras import backend as K 
 from tensorflow import device
 
+s_config = tf.ConfigProto()
+s_config.gpu_options.allow_growth = True
+config = tf.estimator.RunConfig(model_dir=FLAGS.model_dir, session_config=s_config)
+
 #Data Loader Functions
 
 def load_data(file_path):
