@@ -65,7 +65,7 @@ from tensorflow import device
 
 from tensorflow.compat.v1 import ConfigProto
 from tensorflow.compat.v1 import InteractiveSession
-config = ConfigProto(allow_soft_placement=True)
+config = ConfigProto(allow_soft_placement=True, log_device_placement=True)
 config.gpu_options.allow_growth = True
 session = InteractiveSession(config=config)
 
