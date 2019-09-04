@@ -61,11 +61,15 @@ from keras import losses
 from keras import backend as K
 from tensorflow import device
 
+# Set Tensorflow GPU configuration.
+
 from tensorflow.compat.v1 import ConfigProto
 from tensorflow.compat.v1 import InteractiveSession
 
 config = ConfigProto()
 config.gpu_options.allow_growth = True
+config.log_device_placement = True
+config.allow_soft_placement = True 
 session = InteractiveSession(config=config)
 
 #set indices (correspond to prediction times in test sets)
