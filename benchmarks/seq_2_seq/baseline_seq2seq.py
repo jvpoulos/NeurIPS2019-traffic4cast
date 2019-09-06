@@ -223,7 +223,7 @@ def model_train(data_dir, model_dir, log_path, excl_dates=[]):
         
             #train for mini-batches
             with device('/device:GPU:2'):
-                hist = model.fit(x, y, epochs=1, batch_size=3)
+                hist = model.fit(x, y, epochs=1, batch_size=1)
                 loss = hist.history["loss"]
             
             #log loss
