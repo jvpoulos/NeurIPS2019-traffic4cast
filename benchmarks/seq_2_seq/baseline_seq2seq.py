@@ -62,7 +62,7 @@ from tensorflow import device
 
 from tensorflow.compat.v1 import ConfigProto
 from tensorflow.compat.v1 import InteractiveSession
-config = ConfigProto(allow_soft_placement=True, log_device_placement=True)
+config = ConfigProto()
 config.gpu_options.allow_growth = True
 session = InteractiveSession(config=config)
 
@@ -222,8 +222,8 @@ def model_train(data_dir, model_dir, log_path, excl_dates=[]):
             y = data[:, 3:]
         
             #train for mini-batches
-            with device('/device:GPU:2'):
-                hist = model.fit(x, y, epochs=1, batch_size=1)
+            with device('/device:GPU:1'):
+                hist = model.fit(x, y, epochs=1, batch_size=2)
                 loss = hist.history["loss"]
             
             #log loss
