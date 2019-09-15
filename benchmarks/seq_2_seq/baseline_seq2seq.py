@@ -60,11 +60,11 @@ from tensorflow import device
 
 # Set Tensorflow GPU configuration.
 
-from tensorflow.compat.v1 import ConfigProto
-from tensorflow.compat.v1 import InteractiveSession
-config = ConfigProto(allow_soft_placement=True, log_device_placement=True)
-config.gpu_options.allow_growth = True
-session = InteractiveSession(config=config)
+#from tensorflow.compat.v1 import ConfigProto
+#from tensorflow.compat.v1 import InteractiveSession
+#config = ConfigProto(allow_soft_placement=True, log_device_placement=True)
+#config.gpu_options.allow_growth = True
+#session = InteractiveSession(config=config)
 
 #Data Loader Functions
 
