@@ -128,6 +128,9 @@ This script assumes that the folders provided via the -g (golden) and -s (submit
 these two - file by file, city by city and overall - by calculating the corresponding MSE. The results are output in 3 files with file name prefix.score, prefix.extended_score
 and prefix.log that contain the overall MSE, the overall MSE per city and the individual MSEs, respectively.
 
+### pred.py -d data_folder -m fitted_model_dir -o output_folder -c city
+This script generates predction for submission based on the trained model
+
 ## License
 
 Apache 2.0
