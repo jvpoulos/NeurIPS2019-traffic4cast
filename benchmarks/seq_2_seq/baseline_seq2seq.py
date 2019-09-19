@@ -60,11 +60,11 @@ from tensorflow import device
 
 # Set Tensorflow GPU configuration.
 
-#from tensorflow.compat.v1 import ConfigProto
-#from tensorflow.compat.v1 import InteractiveSession
-#config = ConfigProto(allow_soft_placement=True, log_device_placement=True)
-#config.gpu_options.allow_growth = True
-#session = InteractiveSession(config=config)
+from tensorflow.compat.v1 import ConfigProto
+from tensorflow.compat.v1 import InteractiveSession
+config = ConfigProto(allow_soft_placement=True, log_device_placement=True)
+config.gpu_options.allow_growth = True
+session = InteractiveSession(config=config)
 
 #Data Loader Functions
 
@@ -212,7 +212,7 @@ def model_train(data_dir, model_dir, log_path, excl_dates=[]):
     file_names = list_filenames(data_dir, excl_dates)
     
     #train model for each training data set
-    epochs = 50
+    epochs = 25
     for e in range(epochs):
         for f in file_names:
             data = load_data(data_dir + f)

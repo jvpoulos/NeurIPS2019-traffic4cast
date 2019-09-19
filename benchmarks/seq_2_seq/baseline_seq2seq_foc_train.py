@@ -220,7 +220,7 @@ def model_train(data_dir, model_dir, log_path, indices, excl_dates=[]):
     file_names = list_filenames(data_dir, excl_dates)
     
     #train model for each training data set
-    epochs = 50
+    epochs = 25
     for e in range(epochs):
         for f in file_names:
             data = load_data(data_dir + f, indices)
