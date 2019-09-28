@@ -213,7 +213,8 @@ def model_train(data_dir, model_dir, log_path, indices, excl_dates=[]):
     
     #build and compile model
     model = build_model()
-    optimizer = optimizers.Adam(lr=0.0001)
+    optimizer = optimizers.Adam(lr=0.001)
+    model.load_weights(sys.argv[-1])
     model.compile(optimizer=optimizer, loss=losses.mean_squared_error)
     
     #receive filenames of training days
