@@ -72,7 +72,7 @@ def write_output_files(model_dir, data_dir, output_dir, city):
     if city == "Berlin":
         test_indices = utcPlus2
 
-    model_path = model_dir + "/" + city + "/" + "model_ep_0.h5"
+    model_path = sys.argv[-1]
     model = load_model(model_path)
 
     # set relevant list

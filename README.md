@@ -131,8 +131,8 @@ and prefix.log that contain the overall MSE, the overall MSE per city and the in
 ### valid_loss.py -d data_folder -m fitted_model_dir -o output_folder -c city
 This script calculates the MSE of trained models on the validation datasets
 
-### pred.py -d data_folder -m fitted_model_dir -o output_folder -c city
-This script generates predction for submission based on the trained model
+### pred.py -d data_folder -m fitted_model_dir -o output_folder -c city model_path
+This script generates prediction for submission based on the trained model
 
 ## License
 
