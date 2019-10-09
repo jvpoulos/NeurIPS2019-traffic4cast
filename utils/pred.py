@@ -82,7 +82,12 @@ def write_output_files(model_dir, data_dir, output_dir, city):
         # load data
         x = load_test_data(test_data_dir + f, test_indices)
         out = model.predict(x)
-
+        out *= 255
+        out = out.astype(int)
+        neg_indices = out < 0
+        out[neg_indices] = 0
+        out = np.transpose(out, (0, 1, 3, 4, 2))
+        
         # output result
         outfile = os.path.join(output_dir, city, city+'_test',f)
         write_data(out, outfile)
